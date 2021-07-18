@@ -13,6 +13,20 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "paths": {
+      "angular-open-street-map": [
+        "dist/angular-open-street-map/angular-open-street-map",
+        "dist/angular-open-street-map"
+      ],
+      "open-street-map": [
+        "dist/open-street-map/open-street-map",
+        "dist/open-street-map"
+      ],
+      "open-street-map-angular": [
+        "dist/open-street-map-angular/open-street-map-angular",
+        "dist/open-street-map-angular"
+      ]
+    },
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",

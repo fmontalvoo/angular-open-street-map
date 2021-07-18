@@ -3,5 +3,99 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "open-street-map-angular": {
+      "projectType": "library",
+      "root": "projects/open-street-map-angular",
+      "sourceRoot": "projects/open-street-map-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/open-street-map-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/open-street-map-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/open-street-map-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/open-street-map-angular/src/test.ts",
+            "tsConfig": "projects/open-street-map-angular/tsconfig.spec.json",
+            "karmaConfig": "projects/open-street-map-angular/karma.conf.js"
+          }
+        }
+      }
+    },
+    "open-street-map": {
+      "projectType": "library",
+      "root": "projects/open-street-map",
+      "sourceRoot": "projects/open-street-map/src",
+      "prefix": "ng",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/open-street-map/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/open-street-map/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/open-street-map/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/open-street-map/src/test.ts",
+            "tsConfig": "projects/open-street-map/tsconfig.spec.json",
+            "karmaConfig": "projects/open-street-map/karma.conf.js"
+          }
+        }
+      }
+    },
+    "angular-open-street-map": {
+      "projectType": "library",
+      "root": "projects/angular-open-street-map",
+      "sourceRoot": "projects/angular-open-street-map/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular-open-street-map/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-open-street-map/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-open-street-map/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-open-street-map/src/test.ts",
+            "tsConfig": "projects/angular-open-street-map/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-open-street-map/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "open-street-map-angular"
 }
