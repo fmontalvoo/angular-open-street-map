@@ -1,6 +1,6 @@
 {
-  "name": "osm-workspace",
-  "version": "0.0.1",
+  "name": "angular-open-street-map",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

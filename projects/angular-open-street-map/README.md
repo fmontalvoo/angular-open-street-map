@@ -1,24 +1,83 @@
-# AngularOpenStreetMap
+# Angular Open Street Map
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+Esta librería contiene una implementación de [Open Street Map](https://www.openstreetmap.org) utilizando [Leaflet](https://leafletjs.com/) y los servicios de búsqueda de [Nominatim](https://nominatim.org/).
 
-## Code scaffolding
+## Configuración
 
-Run `ng generate component component-name --project angular-open-street-map` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-open-street-map`.
-> Note: Don't forget to add `--project angular-open-street-map` or else it will be added to the default project in your `angular.json` file. 
+Para poder utilizar esta librería es necesario instalar primero Leaflet, para eso ejecuta le siguiente comando:
+* `npm install leaflet --save`
 
-## Build
+También necesitaras cambiar los estilos css de Leaflet, por lo que necesitaras añadir las siguientes líneas en el archivo `angular.json`:
+```json
+"styles": [
+	... 
+	 "./node_modules/leaflet/dist/leaflet.css"
+],
+```
 
-Run `ng build angular-open-street-map` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para usar el marcador que viene por defecto, agregue las siguientes líneas en el archivo `angular.json`:
+```json
+"assets": [
+    ...
+    {
+        "glob": "**/*",
+        "input": "./node_modules/angular-open-street-map/assets",
+        "output": "/assets/"
+    }
+],
+```
 
-## Publishing
+## Uso
 
-After building your library with `ng build angular-open-street-map`, go to the dist folder `cd dist/angular-open-street-map` and run `npm publish`.
+Agrega el módulo AngularOpenStreetMapModule a las importaciones del módulo que utilizará:
 
-## Running unit tests
+```typescript
+import { NgModule } from '@angular/core';
+import { AngularOpenStreetMapModule } from 'angular-open-street-map';
 
-Run `ng test angular-open-street-map` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+    imports: [
+        ...
+        AngularOpenStreetMapModule
+    ],
+    ...
+})
+export class YourModule {
+}
+```
 
-## Further help
+Añade el elemento al HTML:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```html
+<open-street-map 
+    [lat]="-0.17239496915142513" 
+    [lng]="-78.48261026997494" 
+    [zoom]="15">
+</open-street-map>
+```
+
+Si quieres obtener información del lugar donde esta ubicado el marcador puedes agregar el siguiente código en tu componente:
+
+```typescript
+...
+import { Place } from 'angular-open-street-map/models/place.model';
+
+export class YourComponent {
+
+  public getPlaceInfo(place: Place): void {
+    console.log(place);
+  }
+
+}
+```
+
+Y deberás agregar el siguiente evento en los atributos del componente:
+
+```html
+<open-street-map 
+    ...
+    (placeData)="getPlaceInfo($event)"
+    ...
+>
+</open-street-map>
+```

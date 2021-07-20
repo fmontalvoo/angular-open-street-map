@@ -124,7 +124,7 @@ export class AngularOpenStreetMapComponent implements OnInit, AfterViewInit, OnD
 
     // Crea un nuevo icono personalizado para el marcador.
     this.icon = icon({
-      iconUrl: 'assets/osm/markers/marker.png',
+      iconUrl: 'assets/markers/marker.png',
       iconSize: [50, 90],
       iconAnchor: [22, 94],
     });
