@@ -1,11 +1,32 @@
 {
   "name": "angular-open-street-map",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "description": "Implementación de OpenStreetMap utilizando Leaflet y los servicios de búsqueda de Nominatim.",
+  "author": "Frank Montalvo Ochoa",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^12.1.2",
     "@angular/core": "^12.1.2"
   },
   "dependencies": {
     "tslib": "^2.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fmontalvoo/angular-open-street-map.git"
+  },
+  "keywords": [
+    "Angular",
+    "OSM",
+    "Open",
+    "Street",
+    "Maps",
+    "OpenStreetMap",
+    "Leaflet",
+    "Nominatim"
+  ],
+  "bugs": {
+    "url": "https://github.com/fmontalvoo/angular-open-street-map/issues"
+  },
+  "homepage": "https://github.com/fmontalvoo/angular-open-street-map#readme"
 }

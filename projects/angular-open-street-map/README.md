@@ -1,10 +1,10 @@
-# Angular Open Street Map
+# AngularOpenStreetMap
 
-Esta librería contiene una implementación de [Open Street Map](https://www.openstreetmap.org) utilizando [Leaflet](https://leafletjs.com/) y los servicios de búsqueda de [Nominatim](https://nominatim.org/).
+Esta librería contiene una implementación de [OpenStreetMap](https://www.openstreetmap.org) utilizando [Leaflet](https://leafletjs.com/) y los servicios de búsqueda de [Nominatim](https://nominatim.org/).
 
 ## Configuración
 
-Para poder utilizar esta librería es necesario instalar primero Leaflet, para eso ejecuta le siguiente comando:
+Para poder utilizar esta librería es necesario instalar primero Leaflet, para eso ejecuta el siguiente comando:
 * `npm install leaflet --save`
 
 También necesitaras cambiar los estilos css de Leaflet, por lo que necesitaras añadir las siguientes líneas en el archivo `angular.json`:
